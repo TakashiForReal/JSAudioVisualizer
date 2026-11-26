@@ -2,12 +2,11 @@ const express = require("express");
 const PORT = 4000;
 const app = express();
 
-app.set("view engine","ejs");
-app.use(express.json());
+app.use(express.static("pages"));
 
 app.get('/', (req, res) => res.send("working well"));
 
-app.get('/:id', (req, res) => {
+app.get('/:id/aaa', (req, res) => {
     res.send(`${req.params.id}のユーザー情報`);
 });
 
